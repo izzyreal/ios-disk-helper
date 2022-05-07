@@ -28,8 +28,10 @@ typedef NS_ENUM(NSUInteger, DirectoryType) {
 @end
 
 @interface Disk : NSObject
-+(void)save: (NSData*)data :(Directory*)directory :(NSString*)path;
-+(NSData*)retrieve: (NSString*)path :(Directory*)directory;
++(void)save:(NSData*)data :(Directory*)directory :(NSString*)path;
++(NSData*)retrieve:(NSString*)path :(Directory*)directory;
++(void)remove:(NSString*)path :(Directory*)directory;
++(void)remove:(NSURL*)path;
 @end
 
 @interface DiskInternalHelpers : NSObject

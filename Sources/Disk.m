@@ -80,4 +80,26 @@
   return result;
 }
 
++(void)remove:(NSString*)path :(Directory*)directory {
+  @try {
+    NSURL* url = [DiskInternalHelpers getExistingFileURL:path :directory];
+    NSError* e = nil;
+    
+    if (![[NSFileManager defaultManager] removeItemAtURL:url error:&e])
+      [NSException raise:@"Could not remove specified URL" format:@"Could not remove %@ from %@: %@", path, [directory pathDescription], e.description];
+  } @catch (NSException* e) {
+    @throw e;
+  }
+}
+
++(void)remove:(NSURL*)url {
+  @try {
+    NSError* e = nil;
+    if (![[NSFileManager defaultManager] removeItemAtURL:url error:&e])
+      [NSException raise:@"Could not remove specified URL" format:@"Could not remove %@: %@", url.path, e.description];
+  } @catch (NSException* e) {
+    @throw e;
+  }
+}
+
 @end

@@ -123,6 +123,30 @@
   XCTAssertTrue([retrievedDataString isEqual:dataString]);
 }
 
+- (void)testRemoveByPathAndDir {
+  NSString* dataString = @"This is a test";
+  NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+  Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
+  NSString* path = @"test.txt";
+  [Disk save:data :dir :path];
+  NSURL* url = [DiskInternalHelpers createURL:path :dir];
+  assert([[NSFileManager defaultManager] fileExistsAtPath:url.path]);
+  [Disk remove:path :dir];
+  XCTAssertFalse([[NSFileManager defaultManager] fileExistsAtPath:url.path]);
+}
+
+- (void)testRemoveByURL {
+  NSString* dataString = @"This is a test";
+  NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+  Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
+  NSString* path = @"test.txt";
+  [Disk save:data :dir :path];
+  NSURL* url = [DiskInternalHelpers createURL:path :dir];
+  assert([[NSFileManager defaultManager] fileExistsAtPath:url.path]);
+  [Disk remove:url];
+  XCTAssertFalse([[NSFileManager defaultManager] fileExistsAtPath:url.path]);
+}
+
 - (void)testRemoveSlashesAtBeginning {
   NSString* positiveResult1 = [DiskInternalHelpers removeSlashesAtBeginning:@"/foo/bar"];
   XCTAssertTrue([positiveResult1 isEqualToString:@"foo/bar"]);
