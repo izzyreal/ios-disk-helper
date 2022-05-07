@@ -316,5 +316,83 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CEE947E6-A1A3-451B-BB9D-5CF876B89BE9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/objdisk_tests.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "-testListFiles"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CEE947E6-A1A3-451B-BB9D-5CF876B89BE9 - 278412e355fcacee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testListFiles]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "2204">
+               </Location>
+               <Location
+                  uuid = "CEE947E6-A1A3-451B-BB9D-5CF876B89BE9 - 278412e355fcacee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testListFiles]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "2512">
+               </Location>
+               <Location
+                  uuid = "CEE947E6-A1A3-451B-BB9D-5CF876B89BE9 - 278412e355fcacee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testListFiles]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "2688">
+               </Location>
+               <Location
+                  uuid = "CEE947E6-A1A3-451B-BB9D-5CF876B89BE9 - 278412e355fcacee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testListFiles]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "2768">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

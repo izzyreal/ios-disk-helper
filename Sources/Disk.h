@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, DirectoryType) {
 +(bool)exists:(NSString*)path :(Directory*)directory;
 +(bool)exists:(NSURL*)url;
 +(bool)isFolder:(NSURL*)url;
++(NSArray<NSURL*>*)listFiles:(NSURL*)directoryUrl;
 +(NSURL*)url:(NSString*)path :(Directory*)directory;
 @end
 

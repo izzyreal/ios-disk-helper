@@ -209,6 +209,32 @@
   XCTAssertTrue([Disk exists:newPath :dir]);
 }
 
+- (void)testListFiles {
+  NSString* dataString = @"This is a test";
+  NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+  Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
+  NSString* path1 = @"Folder1/test1.txt";
+  NSString* uuid = [[NSProcessInfo processInfo] globallyUniqueString];
+  NSString* path2 = [@"Folder1/" stringByAppendingString:uuid];
+  [Disk save:data :dir :path1];
+  [Disk save:data :dir :path2];
+  NSArray<NSURL*>* files = [Disk listFiles:[Disk url:@"Folder1" :dir]];
+  XCTAssertGreaterThanOrEqual(files.count, 2);
+
+  NSURL* url1 = [Disk url:path1 :dir];
+  NSURL* url2 = [Disk url:path2 :dir];
+  
+  bool hasUrl1 = false;
+  bool hasUrl2 = false;
+  
+  for (NSURL* url in files) {
+    if ([url.path isEqualToString:url1.path]) hasUrl1 = true;
+    if ([url.path isEqualToString:url2.path]) hasUrl2 = true;
+  }
+  
+  XCTAssertTrue(hasUrl1 && hasUrl2);
+}
+
 - (void)testUrl {
   Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
   NSString* path = @"test.txt";

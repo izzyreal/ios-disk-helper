@@ -168,4 +168,16 @@
   }
 }
 
++(NSArray<NSURL*>*)listFiles:(NSURL*)directoryUrl {
+  NSError* e;
+  
+  NSArray<NSURL*>* contents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:directoryUrl includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&e];
+  
+  if (contents == nil) {
+    [NSException raise:@"Could not list files" format:@"Could not list files in %@: %@", directoryUrl.path, e.description];
+  }
+  
+  return contents;
+}
+
 @end
