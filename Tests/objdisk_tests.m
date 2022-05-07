@@ -136,7 +136,7 @@
   XCTAssertTrue([url.absoluteString isEqualToString:expectedUrl.absoluteString]);
 }
 
-- (void)testSaveRetrieve {
+- (void)testSaveAndRetrieve {
   NSString* dataString = @"This is a test";
   NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
   Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
@@ -181,6 +181,32 @@
   [Disk save:data :dir :path];
   XCTAssertTrue([Disk exists:path :dir]);
   XCTAssertTrue([Disk exists:[Disk url:path :dir]]);
+}
+
+- (void)testIsFolder {
+  NSString* dataString = @"This is a test";
+  NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+  Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
+  NSString* path = @"Folder1/Folder2/test.txt";
+  [Disk save:data :dir :path];
+
+  NSString* folderPath = @"Folder1/Folder2";
+  NSURL* folder = [Disk url:folderPath :dir];
+  
+  XCTAssertTrue([Disk isFolder:folder]);
+}
+
+- (void)testRename {
+  NSString* dataString = @"This is a test";
+  NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+  Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
+  NSString* path = @"Folder1/Folder2/test.txt";
+  [Disk save:data :dir :path];
+  NSString* uuid = [[NSProcessInfo processInfo] globallyUniqueString];
+  NSString* newPath = [@"Folder1/Folder2/" stringByAppendingString:uuid];
+  
+  XCTAssertNoThrow([Disk rename:path :dir :newPath]);
+  XCTAssertTrue([Disk exists:newPath :dir]);
 }
 
 - (void)testUrl {

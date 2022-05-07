@@ -32,8 +32,10 @@ typedef NS_ENUM(NSUInteger, DirectoryType) {
 +(NSData*)retrieve:(NSString*)path :(Directory*)directory;
 +(void)remove:(NSString*)path :(Directory*)directory;
 +(void)remove:(NSURL*)path;
++(void)rename:(NSString*)path :(Directory*)directory :(NSString*)newPath;
 +(bool)exists:(NSString*)path :(Directory*)directory;
 +(bool)exists:(NSURL*)url;
++(bool)isFolder:(NSURL*)url;
 +(NSURL*)url:(NSString*)path :(Directory*)directory;
 @end
 

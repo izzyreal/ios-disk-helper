@@ -102,6 +102,35 @@
   }
 }
 
++(void)rename:(NSString*)path :(Directory*)directory :(NSString*)newPath {
+  @try {
+    NSURL* currentUrl = [DiskInternalHelpers getExistingFileURL:path :directory];
+    NSString* justDirectoryPath = [DiskInternalHelpers createURL:nil :directory].absoluteString;
+    NSString* currentFilePath = [currentUrl.absoluteString stringByReplacingOccurrencesOfString:justDirectoryPath withString:@""];
+    
+    if ([self isFolder:currentUrl] && ![currentFilePath hasSuffix:@"/"]) {
+      currentFilePath = [currentFilePath stringByAppendingString:@"/"];
+    }
+    
+    NSString* currentValidFilePath = [DiskInternalHelpers getValidFilePath:path];
+    NSString* newValidFilePath = [DiskInternalHelpers getValidFilePath:newPath];
+    NSString* newFilePath = [currentFilePath stringByReplacingOccurrencesOfString:currentValidFilePath withString:newValidFilePath];
+    
+    NSURL* newUrl = [DiskInternalHelpers createURL:newFilePath :directory];
+    [DiskInternalHelpers createSubfoldersBeforeCreatingFile:newUrl];
+    
+    NSError* e;
+    
+    bool success = [[NSFileManager defaultManager] moveItemAtURL:currentUrl toURL:newUrl error:&e];
+    
+    if (!success) {
+      [NSException raise:@"Could not rename file" format:@"Could not rename %@ in %@ to %@: %@", path, [directory pathDescription], newPath, e.description];
+    }
+  } @catch (NSException* e) {
+    @throw e;
+  }
+}
+
 +(bool)exists:(NSString*)path :(Directory*)directory {
   @try {
     [DiskInternalHelpers getExistingFileURL:path :directory];
@@ -114,6 +143,14 @@
 
 +(bool)exists:(NSURL*)url {
   return [[NSFileManager defaultManager] fileExistsAtPath:url.path];
+}
+
++(bool)isFolder:(NSURL*)url {
+  bool isDirectory = false;
+  if ([[NSFileManager defaultManager] fileExistsAtPath:url.path isDirectory:&isDirectory]) {
+    if (isDirectory) return true;
+  }
+  return false;
 }
 
 /// Construct URL for a potentially existing or non-existent file. Will not throw if the file does not exist.
