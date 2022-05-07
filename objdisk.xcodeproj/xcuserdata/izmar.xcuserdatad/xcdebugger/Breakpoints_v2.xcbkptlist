@@ -145,5 +145,176 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0FC493C-D857-4672-B71F-8310D76152D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/objdisk_tests.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-testCreateDocumentsURL"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E0FC493C-D857-4672-B71F-8310D76152D5 - 73b6620da3d8720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateDocumentsURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "E0FC493C-D857-4672-B71F-8310D76152D5 - 73b6620da3d8720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateDocumentsURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "E0FC493C-D857-4672-B71F-8310D76152D5 - 73b6620da3d8720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateDocumentsURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "1428">
+               </Location>
+               <Location
+                  uuid = "E0FC493C-D857-4672-B71F-8310D76152D5 - 73b6620da3d8720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateDocumentsURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "1532">
+               </Location>
+               <Location
+                  uuid = "E0FC493C-D857-4672-B71F-8310D76152D5 - 73b6620da3d8720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateDocumentsURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "1612">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84B46FE3-1950-4668-9EF2-BD620BF4E8D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tests/objdisk_tests.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-testCreateTemporaryURL"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84B46FE3-1950-4668-9EF2-BD620BF4E8D5 - 514feb3b26254090"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateTemporaryURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "84B46FE3-1950-4668-9EF2-BD620BF4E8D5 - 514feb3b26254090"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateTemporaryURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "1268">
+               </Location>
+               <Location
+                  uuid = "84B46FE3-1950-4668-9EF2-BD620BF4E8D5 - 514feb3b26254090"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateTemporaryURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "1344">
+               </Location>
+               <Location
+                  uuid = "84B46FE3-1950-4668-9EF2-BD620BF4E8D5 - 514feb3b26254090"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[objdisk_tests testCreateTemporaryURL]"
+                  moduleName = "objdisk-tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izmar/git/objdisk/Tests/objdisk_tests.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "1424">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

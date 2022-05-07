@@ -89,25 +89,51 @@
 }
 
 - (void)testCreateDocumentsURL {
-  XCTAssertNoThrow([DiskInternalHelpers createURL:nil :[[Directory alloc] init:DirectoryTypeDocuments]]);
+  NSURL* url = nil;
+  NSString* path = @"i/am/a/path/foo.txt";
+  XCTAssertNoThrow(url = [DiskInternalHelpers createURL:path :[[Directory alloc] init:DirectoryTypeDocuments]]);
+  NSFileManager* fileManager = [NSFileManager defaultManager];
+  NSURL* expectedUrl = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSAllDomainsMask].firstObject;
+  expectedUrl = [expectedUrl URLByAppendingPathComponent:path];
+  XCTAssertTrue([url.absoluteString isEqualToString:expectedUrl.absoluteString]);
 }
 
 - (void)testCreateCachesURL {
-  XCTAssertNoThrow([DiskInternalHelpers createURL:nil :[[Directory alloc] init:DirectoryTypeCaches]]);
+  NSURL* url = nil;
+  NSString* path = @"i/am/a/path/foo.txt";
+  XCTAssertNoThrow(url = [DiskInternalHelpers createURL:path :[[Directory alloc] init:DirectoryTypeCaches]]);
+  NSFileManager* fileManager = [NSFileManager defaultManager];
+  NSURL* expectedUrl = [fileManager URLsForDirectory:NSCachesDirectory inDomains:NSAllDomainsMask].firstObject;
+  expectedUrl = [expectedUrl URLByAppendingPathComponent:path];
+  XCTAssertTrue([url.absoluteString isEqualToString:expectedUrl.absoluteString]);
 }
-
 
 - (void)testCreateApplicationSupportURL {
-  XCTAssertNoThrow([DiskInternalHelpers createURL:nil :[[Directory alloc] init:DirectoryTypeApplicationSupport]]);
+  NSURL* url = nil;
+  NSString* path = @"i/am/a/path/foo.txt";
+  XCTAssertNoThrow(url = [DiskInternalHelpers createURL:path :[[Directory alloc] init:DirectoryTypeApplicationSupport]]);
+  NSFileManager* fileManager = [NSFileManager defaultManager];
+  NSURL* expectedUrl = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSAllDomainsMask].firstObject;
+  expectedUrl = [expectedUrl URLByAppendingPathComponent:path];
+  XCTAssertTrue([url.absoluteString isEqualToString:expectedUrl.absoluteString]);
 }
 
-
 - (void)testCreateTemporaryURL {
-  XCTAssertNoThrow([DiskInternalHelpers createURL:nil :[[Directory alloc] init:DirectoryTypeTemporary]]);
+  NSURL* url = nil;
+  NSString* path = @"i/am/a/path/foo.txt";
+  XCTAssertNoThrow(url = [DiskInternalHelpers createURL:path :[[Directory alloc] init:DirectoryTypeTemporary]]);
+  NSURL* expectedUrl = [NSURL URLWithString:[@"file://" stringByAppendingString:NSTemporaryDirectory()]];
+  expectedUrl = [expectedUrl URLByAppendingPathComponent:path];
+  XCTAssertTrue([url.absoluteString isEqualToString:expectedUrl.absoluteString]);
 }
 
 - (void)testCreateSharedContainerURL {
-  XCTAssertNoThrow([DiskInternalHelpers createURL:nil :[[Directory alloc] initSharedContainer:@"foo"]]);
+  NSURL* url = nil;
+  NSString* path = @"i/am/a/path/foo.txt";
+  XCTAssertNoThrow(url = [DiskInternalHelpers createURL:path :[[Directory alloc] initSharedContainer:@"test_appgroup"]]);
+  NSURL* expectedUrl = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"test_appgroup"];
+  expectedUrl = [expectedUrl URLByAppendingPathComponent:path];
+  XCTAssertTrue([url.absoluteString isEqualToString:expectedUrl.absoluteString]);
 }
 
 - (void)testSaveRetrieve {
@@ -145,6 +171,22 @@
   assert([[NSFileManager defaultManager] fileExistsAtPath:url.path]);
   [Disk remove:url];
   XCTAssertFalse([[NSFileManager defaultManager] fileExistsAtPath:url.path]);
+}
+
+- (void)testExists {
+  NSString* dataString = @"This is a test";
+  NSData* data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
+  Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
+  NSString* path = @"test.txt";
+  [Disk save:data :dir :path];
+  XCTAssertTrue([Disk exists:path :dir]);
+  XCTAssertTrue([Disk exists:[Disk url:path :dir]]);
+}
+
+- (void)testUrl {
+  Directory* dir = [[Directory alloc] init:DirectoryTypeDocuments];
+  NSString* path = @"test.txt";
+  XCTAssertNoThrow([Disk url:path :dir]);
 }
 
 - (void)testRemoveSlashesAtBeginning {

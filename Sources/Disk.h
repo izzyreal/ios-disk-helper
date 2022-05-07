@@ -32,12 +32,15 @@ typedef NS_ENUM(NSUInteger, DirectoryType) {
 +(NSData*)retrieve:(NSString*)path :(Directory*)directory;
 +(void)remove:(NSString*)path :(Directory*)directory;
 +(void)remove:(NSURL*)path;
++(bool)exists:(NSString*)path :(Directory*)directory;
++(bool)exists:(NSURL*)url;
++(NSURL*)url:(NSString*)path :(Directory*)directory;
 @end
 
 @interface DiskInternalHelpers : NSObject
-+(NSString*) getValidFilePath :(NSString*) originalString;
++(NSString*) getValidFilePath :(NSString*)originalString;
 +(NSURL*)createURL:(NSString*)path :(Directory*)directory;
 +(NSURL*)getExistingFileURL:(NSString*)path :(Directory*)directory; // throws if not exist
 +(void)createSubfoldersBeforeCreatingFile :(NSURL*)url;
-+(NSString*) removeSlashesAtBeginning :(NSString*) str;
++(NSString*)removeSlashesAtBeginning:(NSString*) str;
 @end

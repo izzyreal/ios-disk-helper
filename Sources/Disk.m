@@ -102,4 +102,33 @@
   }
 }
 
++(bool)exists:(NSString*)path :(Directory*)directory {
+  @try {
+    [DiskInternalHelpers getExistingFileURL:path :directory];
+    return true;
+  } @catch (NSException* e) {
+    return false;
+  }
+  return false;
+}
+
++(bool)exists:(NSURL*)url {
+  return [[NSFileManager defaultManager] fileExistsAtPath:url.path];
+}
+
+/// Construct URL for a potentially existing or non-existent file. Will not throw if the file does not exist.
+///
+/// - Parameters:
+///   - path: path of file relative to directory (set nil for entire directory)
+///   - directory: directory for the specified path
+/// - Returns: URL for either an existing or non-existing file
+/// - Throws: Error if URL creation failed
++(NSURL*)url:(NSString*)path :(Directory*)directory {
+  @try {
+    return [DiskInternalHelpers createURL:path :directory];
+  } @catch (NSException* e) {
+    @throw e;
+  }
+}
+
 @end
