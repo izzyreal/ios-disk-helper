@@ -26,7 +26,7 @@
 }
 
 - (void)testDirectoryInstantiation {
-  Directory* directory = [[Directory alloc] init];
+  Directory* directory = [[Directory alloc] init:DirectoryTypeDocuments];
   XCTAssertNotNil(directory);
 }
 

@@ -1,10 +1,4 @@
-//
-//  objdisk.h
-//  objdisk
-//
-//  Created by Izmar on 07/05/2022.
-//
-
+#pragma once
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, DirectoryType) {

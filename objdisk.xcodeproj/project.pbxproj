@@ -10,10 +10,20 @@
 		0A7AE52C28269E580079A241 /* DiskInternalHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AE52928269E580079A241 /* DiskInternalHelpers.m */; };
 		0A7AE52D28269E580079A241 /* Disk.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AE52A28269E580079A241 /* Disk.m */; };
 		0A7AE53028269E6E0079A241 /* objdisk_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AE52F28269E6E0079A241 /* objdisk_tests.m */; };
+		0A7AE53B28270B240079A241 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AE53A28270B240079A241 /* main.cpp */; };
+		0A7AE5462827B4910079A241 /* DiskCpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0A7AE54328270CA90079A241 /* DiskCpp.mm */; };
 		0AA04214282657940085A7BE /* libobjdisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA04200282657270085A7BE /* libobjdisk.a */; };
+		0AAF69052827B6A2008F83BA /* libobjdisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA04200282657270085A7BE /* libobjdisk.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0A7AE54028270B870079A241 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AA041F8282657270085A7BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AA041FF282657270085A7BE;
+			remoteInfo = objdisk;
+		};
 		0AA04215282657940085A7BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0AA041F8282657270085A7BE /* Project object */;
@@ -24,6 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0A7AE53628270B240079A241 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		0AA041FE282657270085A7BE /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,11 +59,23 @@
 		0A7AE52928269E580079A241 /* DiskInternalHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiskInternalHelpers.m; sourceTree = "<group>"; };
 		0A7AE52A28269E580079A241 /* Disk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Disk.m; sourceTree = "<group>"; };
 		0A7AE52F28269E6E0079A241 /* objdisk_tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = objdisk_tests.m; sourceTree = "<group>"; };
+		0A7AE53828270B240079A241 /* objdisk_cpp_tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = objdisk_cpp_tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A7AE53A28270B240079A241 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0A7AE54228270C690079A241 /* DiskCpp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiskCpp.h; sourceTree = "<group>"; };
+		0A7AE54328270CA90079A241 /* DiskCpp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DiskCpp.mm; sourceTree = "<group>"; };
 		0AA04200282657270085A7BE /* libobjdisk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libobjdisk.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA04210282657940085A7BE /* objdisk-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "objdisk-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0A7AE53528270B240079A241 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AAF69052827B6A2008F83BA /* libobjdisk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AA041FD282657270085A7BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +100,8 @@
 				0A7AE52828269E580079A241 /* Disk.h */,
 				0A7AE52928269E580079A241 /* DiskInternalHelpers.m */,
 				0A7AE52A28269E580079A241 /* Disk.m */,
+				0A7AE54228270C690079A241 /* DiskCpp.h */,
+				0A7AE54328270CA90079A241 /* DiskCpp.mm */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -81,12 +114,22 @@
 			path = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
+		0A7AE53928270B240079A241 /* objdisk_cpp_tests */ = {
+			isa = PBXGroup;
+			children = (
+				0A7AE53A28270B240079A241 /* main.cpp */,
+			);
+			path = objdisk_cpp_tests;
+			sourceTree = "<group>";
+		};
 		0AA041F7282657270085A7BE = {
 			isa = PBXGroup;
 			children = (
 				0A7AE52628269E580079A241 /* Sources */,
 				0A7AE52E28269E6E0079A241 /* Tests */,
+				0A7AE53928270B240079A241 /* objdisk_cpp_tests */,
 				0AA04201282657270085A7BE /* Products */,
+				0AAF69042827B6A2008F83BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,13 +138,39 @@
 			children = (
 				0AA04200282657270085A7BE /* libobjdisk.a */,
 				0AA04210282657940085A7BE /* objdisk-tests.xctest */,
+				0A7AE53828270B240079A241 /* objdisk_cpp_tests */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0AAF69042827B6A2008F83BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A7AE53728270B240079A241 /* objdisk_cpp_tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A7AE53C28270B240079A241 /* Build configuration list for PBXNativeTarget "objdisk_cpp_tests" */;
+			buildPhases = (
+				0A7AE53428270B240079A241 /* Sources */,
+				0A7AE53528270B240079A241 /* Frameworks */,
+				0A7AE53628270B240079A241 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A7AE54128270B870079A241 /* PBXTargetDependency */,
+			);
+			name = objdisk_cpp_tests;
+			productName = objdisk_cpp_tests;
+			productReference = 0A7AE53828270B240079A241 /* objdisk_cpp_tests */;
+			productType = "com.apple.product-type.tool";
+		};
 		0AA041FF282657270085A7BE /* objdisk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AA04209282657270085A7BE /* Build configuration list for PBXNativeTarget "objdisk" */;
@@ -146,6 +215,9 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					0A7AE53728270B240079A241 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
 					0AA041FF282657270085A7BE = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -169,6 +241,7 @@
 			targets = (
 				0AA041FF282657270085A7BE /* objdisk */,
 				0AA0420F282657940085A7BE /* objdisk-tests */,
+				0A7AE53728270B240079A241 /* objdisk_cpp_tests */,
 			);
 		};
 /* End PBXProject section */
@@ -184,10 +257,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A7AE53428270B240079A241 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A7AE53B28270B240079A241 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AA041FC282657270085A7BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7AE5462827B4910079A241 /* DiskCpp.mm in Sources */,
 				0A7AE52D28269E580079A241 /* Disk.m in Sources */,
 				0A7AE52C28269E580079A241 /* DiskInternalHelpers.m in Sources */,
 			);
@@ -204,6 +286,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0A7AE54128270B870079A241 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AA041FF282657270085A7BE /* objdisk */;
+			targetProxy = 0A7AE54028270B870079A241 /* PBXContainerItemProxy */;
+		};
 		0AA04216282657940085A7BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0AA041FF282657270085A7BE /* objdisk */;
@@ -212,6 +299,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0A7AE53D28270B240079A241 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KFBA7Q5H76;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0A7AE53E28270B240079A241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KFBA7Q5H76;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 		0AA04207282657270085A7BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -379,6 +490,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A7AE53C28270B240079A241 /* Build configuration list for PBXNativeTarget "objdisk_cpp_tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A7AE53D28270B240079A241 /* Debug */,
+				0A7AE53E28270B240079A241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0AA041FB282657270085A7BE /* Build configuration list for PBXProject "objdisk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
